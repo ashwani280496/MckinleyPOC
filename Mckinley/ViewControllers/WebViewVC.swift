@@ -1,19 +1,27 @@
 //
 //  WebViewVC.swift
-//  Mckinley
+//  McKinleyPOC
 //
-//  Created by ASHWANI  KUMAR on 25/03/20.
-//  Copyright © 2020 ASHWANI  KUMAR. All rights reserved.
+//  Created by ASHWANI  KUMAR on 22/12/19.
+//  Copyright © 2019 ASHWANI  KUMAR. All rights reserved.
 //
 
 import UIKit
+import WebKit
 
 class WebViewVC: UIViewController {
 
+    @IBOutlet var wkWebView: WKWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let token = UserDefaultsHelper.readPreferencesString(key: UserDefaultKeys.token) {
+            let url = URL(string: "https://www.mckinleyrice.com?token=\(token)*")
+            let requestObj = URLRequest(url: url! as URL)
+            wkWebView.load(requestObj)
 
-        // Do any additional setup after loading the view.
+        }
+        
+                // Do any additional setup after loading the view.
     }
     
 

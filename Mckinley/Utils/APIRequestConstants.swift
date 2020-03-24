@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+class APIRequestConstants{
+    
+
+    static let baseUrl = "https://reqres.in/"
+    
+    // Login API urls
+    static let loginUrl = "api/login"
+}

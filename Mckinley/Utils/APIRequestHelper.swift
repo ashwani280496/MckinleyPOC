@@ -7,3 +7,20 @@
 //
 
 import Foundation
+import TRON
+import SwiftyJSON
+import Alamofire
+
+class APIRequestHelper{
+
+static let tron = TRON(baseURL: APIRequestConstants.baseUrl)
+
+static func loginTask(parameters: [String:AnyObject]) -> APIRequest<LoginResponseModel, APIErrorModel> {
+
+    let request: APIRequest<LoginResponseModel, APIErrorModel> = tron.codable.request(APIRequestConstants.loginUrl)
+    request.method = .post
+    request.parameters = parameters
+    request.parameterEncoding = JSONEncoding.default
+    return request
+}
+}

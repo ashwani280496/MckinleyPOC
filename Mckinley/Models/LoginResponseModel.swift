@@ -7,3 +7,15 @@
 //
 
 import Foundation
+import TRON
+import SwiftyJSON
+
+
+struct LoginResponseModel :Codable{
+    var token:String!
+}
+
+class APIErrorModel: Codable {
+    var status_code : Int?
+    var detail : String?
+}
