@@ -17,7 +17,7 @@ Thrid party framewoks and Library are managed using Cocoapods.
 * App version will only increase on app submiting to App Store
 
 ### Targeted Version
-- 12.4
+- 13.0
 
 ### Swift Version
 - 5
